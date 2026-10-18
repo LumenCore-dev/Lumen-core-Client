@@ -9,14 +9,16 @@ not distribute the MCC engine, maps, or exported game models and textures.
 ## Download
 
 Get the Windows x64 client from [Releases](https://github.com/LumenCore-dev/Lumen-core-Client/releases).
-Use **0.2.7-preview or newer** for the community server. Extract the entire ZIP
+Use **0.2.8-preview or newer** for the community server. Extract the entire ZIP
 into its own writable folder and start **LumenCore.exe**. Keep the included
 `server-trust` folder and session/build files; copying only the EXE is insufficient.
 Do not run it from inside the ZIP or place it inside your MCC installation.
 
 The first launch guides you through selecting MCC and setting your player name.
 Setup uses German on German Windows display languages and English otherwise.
-After setup, later launches go directly to the client. Use `Client-einrichten.cmd`
+After installing a new version, graphics are prepared automatically in the
+loading screen before the client opens. Successful preparation is remembered;
+subsequent launches skip it. Use `Client-einrichten.cmd`
 only if you want to reopen setup.
 
 Windows 10/11 x64, .NET Framework 4.8 and DirectX 11 graphics are required.
@@ -33,7 +35,8 @@ The client checks that the installed Halo 4 engine version is supported.
   use about 705 MB and are reused on later launches. No game assets are bundled.
   Preview armor changes remain menu-only.
 - Some in-game menus are still German. Builds are currently unsigned.
-- Optional map preloading does not precompile every shader.
+- Automatic loading preparation warms a real local map; it does not compile
+  every shader for all maps and effects.
 
 Keep your existing `reports/native-client.ini` when updating; it contains your
 settings. Do not share personal profiles, private keys or unreviewed debug logs.
