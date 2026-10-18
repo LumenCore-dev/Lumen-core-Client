@@ -26,7 +26,10 @@ The client checks that the installed Halo 4 engine version is supported.
 - The package connects to the community test server by default.
 - **128-player gameplay is not yet supported or verified.** Expanded session
   admission is experimental and does not remove the remaining engine limits.
-- The 3D customization preview is not included in this public package.
+- Setup creates the Spartan and Elite 3D previews from your own MCC installation.
+  Allow a few minutes and 3 GB free during preparation; the finished previews
+  use about 705 MB and are reused on later launches. No game assets are bundled.
+  Preview armor changes remain menu-only.
 - Some in-game menus are still German. Builds are currently unsigned.
 - Optional map preloading does not precompile every shader.
 
