@@ -9,7 +9,9 @@ not distribute the MCC engine, maps, or exported game models and textures.
 ## Download
 
 Get the Windows x64 client from [Releases](https://github.com/LumenCore-dev/Lumen-core-Client/releases).
-Extract the entire ZIP into its own writable folder and start **LumenCore.exe**.
+Use **0.2.7-preview or newer** for the community server. Extract the entire ZIP
+into its own writable folder and start **LumenCore.exe**. Keep the included
+`server-trust` folder and session/build files; copying only the EXE is insufficient.
 Do not run it from inside the ZIP or place it inside your MCC installation.
 
 The first launch guides you through selecting MCC and setting your player name.
