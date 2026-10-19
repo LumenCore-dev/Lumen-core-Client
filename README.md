@@ -1,57 +1,37 @@
 # Lumen Core
 
-A community client for Halo 4 on PC, by **Lumen Core Community**.
+Community client for Halo 4 on PC. Early preview for small-group testing.
+Requires your own supported Steam MCC installation with Halo 4 campaign and
+multiplayer. Windows 10/11 x64, .NET Framework 4.8 and DirectX 11 are required.
 
-**Early preview — small-group testing.** Requires your own Steam copy of
-Halo: The Master Chief Collection with Halo 4 installed. This project does
-not distribute the MCC engine, maps, or exported game models and textures.
+Download **0.2.10-preview** from [Releases](https://github.com/LumenCore-dev/Lumen-core-Client/releases).
+Extract the complete ZIP into a writable folder outside Steam/MCC and start
+`LumenCore.exe`. Keep the certificate, build/session files and preview tool.
 
-## Download
+This public release uses original maps from the user's local MCC installation.
+**Custom Elite gameplay and custom emotes are paused.** Setup can still create
+menu previews locally; this does not activate those gameplay features. Global
+and team text chat, configurable communication shortcuts and voice settings
+are included. A 128-slot configuration is experimental; working simultaneous
+128-player gameplay is not claimed. Builds are unsigned.
 
-Get the Windows x64 client from [Releases](https://github.com/LumenCore-dev/Lumen-core-Client/releases).
-Use **0.2.9-preview or newer** for the community server. Extract the entire ZIP
-into its own writable folder and start **LumenCore.exe**. Keep the included
-`server-trust` folder and session/build files; copying only the EXE is insufficient.
-Do not run it from inside the ZIP or place it inside your MCC installation.
+First startup selects MCC and prepares local previews and graphics. Allow
+about 3 GB free during preview preparation. The standalone preview tool has
+its runtime included. Successful local preparation is reused. Use
+`Client-einrichten.cmd` to reopen setup. Keep your existing
+`reports/native-client.ini` when updating; do not share identity/private keys.
 
-The first launch guides you through selecting MCC and setting your player name.
-Setup uses German on German Windows display languages and English otherwise.
-After installing a new version, graphics are prepared automatically in the
-loading screen before the client opens. Successful preparation is remembered;
-subsequent launches skip it. Use `Client-einrichten.cmd`
-only if you want to reopen setup.
+The download includes no MCC engine DLL, game maps, generated Halo models,
+textures or loading artwork. Setup reads the user's files and writes generated
+previews in the separate client directory. Program-owned text/colors are used
+for setup and loading screens. Matching GPL preview-tool source and notices
+are supplied with the release; the preview tool is unchanged from 0.2.9.
 
-Windows 10/11 x64, .NET Framework 4.8 and DirectX 11 graphics are required.
-The client checks that the installed Halo 4 engine version is supported.
-
-## Current status
-
-- Client setup and real map loading are under active testing.
-- The package connects to the community test server by default.
-- **128-player gameplay is not yet supported or verified.** Expanded session
-  admission is experimental and does not remove the remaining engine limits.
-- Setup creates the Spartan and Elite 3D previews from your own MCC installation.
-  Allow a few minutes and 3 GB free during preparation; the finished previews
-  use about 705 MB and are reused on later launches. No game assets are bundled.
-  Supported saved Spartan armor, colors and visor presets apply on multiplayer
-  join. Elite, detail tint and unsupported variants remain preview-only.
-- Two real clients were used to check different saved appearances and session
-  departure. This is not a 128-player load test.
-- Some in-game menus are still German. Builds are currently unsigned.
-- Automatic loading preparation warms a real local map; it does not compile
-  every shader for all maps and effects.
-
-Keep your existing `reports/native-client.ini` when updating; it contains your
-settings. Do not share personal profiles, private keys or unreviewed debug logs.
-
-## Testing and issues
-
-Use [Issues](https://github.com/LumenCore-dev/Lumen-core-Client/issues) for reproducible bugs.
-Include the client version, map, Windows/GPU, steps to reproduce, and what you
-expected versus what happened. Start with a few players before larger tests.
-
-## About
+This publication was packaged and statically checked; no new gameplay test
+was run for publication. See the included README, notices and release notes.
+Report reproducible issues with version, map, Windows/GPU, steps and expected
+versus actual behavior at [Issues](https://github.com/LumenCore-dev/Lumen-core-Client/issues).
+Review personal details before sharing logs.
 
 Independent community project, not affiliated with or endorsed by Microsoft
-or Halo Studios. Halo and MCC belong to their respective owners. Third-party
-notices are included in the client package.
+or Halo Studios. Halo and MCC belong to their owners.
