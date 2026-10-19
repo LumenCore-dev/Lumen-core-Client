@@ -9,7 +9,7 @@ not distribute the MCC engine, maps, or exported game models and textures.
 ## Download
 
 Get the Windows x64 client from [Releases](https://github.com/LumenCore-dev/Lumen-core-Client/releases).
-Use **0.2.8-preview or newer** for the community server. Extract the entire ZIP
+Use **0.2.9-preview or newer** for the community server. Extract the entire ZIP
 into its own writable folder and start **LumenCore.exe**. Keep the included
 `server-trust` folder and session/build files; copying only the EXE is insufficient.
 Do not run it from inside the ZIP or place it inside your MCC installation.
@@ -33,7 +33,10 @@ The client checks that the installed Halo 4 engine version is supported.
 - Setup creates the Spartan and Elite 3D previews from your own MCC installation.
   Allow a few minutes and 3 GB free during preparation; the finished previews
   use about 705 MB and are reused on later launches. No game assets are bundled.
-  Preview armor changes remain menu-only.
+  Supported saved Spartan armor, colors and visor presets apply on multiplayer
+  join. Elite, detail tint and unsupported variants remain preview-only.
+- Two real clients were used to check different saved appearances and session
+  departure. This is not a 128-player load test.
 - Some in-game menus are still German. Builds are currently unsigned.
 - Automatic loading preparation warms a real local map; it does not compile
   every shader for all maps and effects.
