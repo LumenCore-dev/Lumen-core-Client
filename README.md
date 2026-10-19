@@ -35,3 +35,13 @@ Review personal details before sharing logs.
 
 Independent community project, not affiliated with or endorsed by Microsoft
 or Halo Studios. Halo and MCC belong to their owners.
+
+## Run your own server
+
+A separate [Dedicated Server 0.2.10-preview](https://github.com/LumenCore-dev/Lumen-core-Client/releases/tag/server-v0.2.10-preview)
+package is available for Windows x64 and Linux x86_64 via Wine 11.
+Read the [German setup/upload/configuration guide](SERVER-ANLEITUNG.md).
+The package includes a fresh example configuration and setup tools; operators
+supply their own local MCC data. No game assets, operator credentials, private
+keys, databases or populated administrator lists are bundled. Elite and custom
+emotes remain paused. Native compatibility: 0.2.8; matching client: 0.2.10-preview.
