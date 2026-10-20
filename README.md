@@ -1,4 +1,4 @@
-# Lumen Core — Halo 4 Multiplayer Client & Dedicated Server for PC
+# Lumen Core â€” Halo 4 Multiplayer Client & Dedicated Server for PC
 
 Lumen Core is an independent community project for **Halo 4 multiplayer on PC**,
 with a Windows client, a server browser and a separate **Halo 4 dedicated server**
@@ -6,20 +6,20 @@ package for Windows and Linux via Wine. It is an early preview for small-group t
 You need your own supported **Steam Halo: The Master Chief Collection (MCC)**
 installation with Halo 4 campaign and multiplayer installed.
 
-[Download the Windows client](https://github.com/LumenCore-dev/Lumen-core-Client/releases/download/v0.2.10-preview/LumenCore-0.2.10-preview-win64.zip)
-· [Host your own server](#run-your-own-server-halo-4-dedicated-server)
-· [Deutsch](README.de.md)
-· [Report an issue](https://github.com/LumenCore-dev/Lumen-core-Client/issues)
+[Download the Windows client](https://github.com/LumenCore-dev/Lumen-core-Client/releases/download/v0.2.11-preview/LumenCore-0.2.11-preview-win64.zip)
+Â· [Host your own server](#run-your-own-server-halo-4-dedicated-server)
+Â· [Deutsch](README.de.md)
+Â· [Report an issue](https://github.com/LumenCore-dev/Lumen-core-Client/issues)
 
 ## Downloads
 
 | What you want to do | Download | Platform |
 |---|---|---|
-| Join a Halo 4 multiplayer server | [Client 0.2.10-preview ZIP](https://github.com/LumenCore-dev/Lumen-core-Client/releases/download/v0.2.10-preview/LumenCore-0.2.10-preview-win64.zip) | Windows 10/11 x64 |
-| Host a Halo 4 dedicated server | [Server 0.2.10-preview ZIP](https://github.com/LumenCore-dev/Lumen-core-Client/releases/download/server-v0.2.10-preview/LumenCore-Server-0.2.10-preview.zip) | Windows x64 or Linux x86_64 with Wine 11 |
+| Join a Halo 4 multiplayer server | [Client 0.2.11-preview ZIP](https://github.com/LumenCore-dev/Lumen-core-Client/releases/download/v0.2.11-preview/LumenCore-0.2.11-preview-win64.zip) | Windows 10/11 x64 |
+| Host a Halo 4 dedicated server | [Server 0.2.11-preview ZIP](https://github.com/LumenCore-dev/Lumen-core-Client/releases/download/server-v0.2.11-preview/LumenCore-Server-0.2.11-preview.zip) | Windows x64 or Linux x86_64 with Wine 11 |
 
-Read the [client release notes and checksums](https://github.com/LumenCore-dev/Lumen-core-Client/releases/tag/v0.2.10-preview)
-or the [server release notes and checksums](https://github.com/LumenCore-dev/Lumen-core-Client/releases/tag/server-v0.2.10-preview)
+Read the [client release notes and checksums](https://github.com/LumenCore-dev/Lumen-core-Client/releases/tag/v0.2.11-preview)
+or the [server release notes and checksums](https://github.com/LumenCore-dev/Lumen-core-Client/releases/tag/server-v0.2.11-preview)
 before installing. The preview-tool source ZIP is for developers; players need the **win64 ZIP**.
 
 ## Play Halo 4 multiplayer on PC
@@ -46,8 +46,8 @@ Do not share private keys or passwords when reporting a problem.
 
 ## Run your own server (Halo 4 Dedicated Server)
 
-Use the [server ZIP](https://github.com/LumenCore-dev/Lumen-core-Client/releases/download/server-v0.2.10-preview/LumenCore-Server-0.2.10-preview.zip)
-with the matching **Lumen Core 0.2.10-preview client**. The published pair uses
+Use the [server ZIP](https://github.com/LumenCore-dev/Lumen-core-Client/releases/download/server-v0.2.11-preview/LumenCore-Server-0.2.11-preview.zip)
+with the matching **Lumen Core 0.2.11-preview client**. The published pair uses
 native compatibility version **0.2.8**.
 
 The server is a Windows x64 program. On Linux x86_64, it runs through **Wine 11**;
@@ -85,10 +85,9 @@ enable these gameplay features.
 
 ### Is this a stable or official Halo release?
 
-No. Builds are unsigned early previews. The 0.2.10 public publication was packaged
-and statically checked; no additional gameplay test was run for that publication.
-See its release notes for the exact scope. Later local development tests do not
-automatically validate an older public download.
+No. Builds are unsigned early previews. This build passed two-client Windows gameplay,
+a five-minute stability run and map rotation. Linux/Wine validation covers lobby/RCON,
+not gameplay. No second-PC or high-player-count validation is claimed. See the release notes.
 
 ## Help, source and notices
 
@@ -97,7 +96,7 @@ with the version, map, Windows/GPU details, steps and expected versus actual beh
 Review personal details before sharing logs.
 
 Matching GPL preview-tool source and third-party notices are included with the
-[client release](https://github.com/LumenCore-dev/Lumen-core-Client/releases/tag/v0.2.10-preview).
+[client release](https://github.com/LumenCore-dev/Lumen-core-Client/releases/tag/v0.2.11-preview).
 The preview tool is unchanged from 0.2.9. Program-owned text and colors are used
 for setup and loading screens.
 
