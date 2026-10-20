@@ -1,7 +1,7 @@
-# Lumen Core Dedicated Server 0.2.10-preview
+# Lumen Core Dedicated Server 0.2.11-preview
 
 Mit diesem Paket betreibst du einen eigenen Halo-4-Server fuer den passenden
-Lumen-Core-Client 0.2.10-preview. Native Kompatibilitaet: **0.2.8**.
+Lumen-Core-Client 0.2.11-preview. Native Kompatibilitaet: **0.2.8**.
 Der Server ist ein Windows-x64-Programm; Linux nutzt Wine, Xvfb und denselben
 integrierten Lobbydienst. Es gibt keine separate native Linux-Binary.
 
@@ -17,7 +17,7 @@ Spielbetrieb mit 128 Spielern. Dies ist eine fruehe Preview.
 - Eigene vollstaendige Steam-MCC-Installation mit Halo 4. Steam: MCC >
   Verwalten > Lokale Dateien durchsuchen. Gemeint ist der Ordner, der
   `halo4` und `MCC` enthaelt, nicht der Steam-Hauptordner.
-- Passender Client: https://github.com/LumenCore-dev/Lumen-core-Client/releases/tag/v0.2.10-preview
+- Passender Client: https://github.com/LumenCore-dev/Lumen-core-Client/releases/tag/v0.2.11-preview
 - Windows 10/11 x64 oder Linux x86_64 mit einer funktionierenden 64-Bit-Wine-11-
   Installation. Die bestehende Linux-Bereitstellung nutzt Debian 13/Wine 11;
   andere Distributionen wurden fuer dieses Paket nicht neu getestet.
@@ -104,7 +104,7 @@ Alternativ geht OpenSSH/SCP. Im folgenden Beispiel `DEIN_SSH_BENUTZER` und
 `SERVER_IP` ersetzen; zuerst den Zielordner auf Linux anlegen:
 
 ```powershell
-scp .\LumenCore-Server-0.2.10-preview.zip DEIN_SSH_BENUTZER@SERVER_IP:~/lumencore-server/
+scp .\LumenCore-Server-0.2.11-preview.zip DEIN_SSH_BENUTZER@SERVER_IP:~/lumencore-server/
 scp -r .\game DEIN_SSH_BENUTZER@SERVER_IP:~/lumencore-server/
 ```
 
@@ -113,7 +113,7 @@ zusaetzlichen Paket-Unterordner:
 
 ```bash
 cd ~/lumencore-server
-unzip LumenCore-Server-0.2.10-preview.zip
+unzip LumenCore-Server-0.2.11-preview.zip
 sha256sum -c FILES.sha256
 ```
 
@@ -309,7 +309,7 @@ die Dienstgruppe; vor Wartung nach Moeglichkeit zuerst per RCON geordnet stoppen
   Eigene Konfiguration nicht durch die Beispielkonfiguration ersetzen.
   Private Identitaeten und Wine-Prefix auf demselben System/Benutzer erhalten.
 - Passende Client-/Server-Kompatibilitaet verwenden. Dieses Paket verwendet
-  dieselbe Server-Binary wie die bereitgestellte Version 0.2.8.
+  native Kompatibilitaet 0.2.8 mit neu gebauten und getesteten Programmen.
 - Keine angepassten Elite-/Emote-Caches hochladen; sie werden nicht verwendet.
 - `setup-server.py --check` meldet fehlende Karten/Engineversionen, startet aber
   keine Sitzung und ersetzt keinen Beitrittstest.
@@ -317,7 +317,7 @@ die Dienstgruppe; vor Wartung nach Moeglichkeit zuerst per RCON geordnet stoppen
   und ggf. das systemd-Journal. Logs vor Weitergabe auf Spieler-/Netzdaten pruefen.
 - `DEDICATED_LOBBY_READY` belegt die native Lobby-Bereitschaft. Erfolgreicher
   Beitritt, Kartenstart und Spielbewegung muessen im eigenen Betrieb beobachtet
-  werden. Fuer diese Paketveroeffentlichung wurden keine neuen Spieltests ausgefuehrt.
+  werden. Dieser Build wurde mit zwei Windows-Clients, fuenf Minuten Laufzeit und Kartenwechsel getestet. Linux/Wine wurde auf Lobby/RCON geprueft; Linux-Gameplay ist nicht nachgewiesen.
 - Fehlendes Zertifikat: Abschnitt 6. Falsche Datenversion: Engine-SHA pruefen.
   Nicht erreichbar: lokale Bind-IP, Provider-/OS-Firewall, Router und Zertifikat
   pruefen. Port belegt: alte Instanz stoppen; nicht zwei Instanzen im selben Ordner starten.
