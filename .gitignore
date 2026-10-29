@@ -18,6 +18,11 @@ Server/data/
 # Build-Reports
 reports/
 
+# Binaerdateien (gehoeren in GitHub Releases, nicht in den Repo)
+*.exe
+*.dll
+*.pdb
+
 # Karten- und Sound-Dateien
 *.map
 *.pck
