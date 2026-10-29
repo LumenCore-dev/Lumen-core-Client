@@ -1,0 +1,67 @@
+WAFFENMODI
+
+Start-Server.cmd: gemischter Pool; Details in Map-Konfiguration.txt.
+Longbow/Daybreak = Gun Game, Outcast/Wreckage = Waffen-Deathmatch.
+Start-GunGame.cmd: Gun Game auf allen grossen Fahrzeugmaps.
+Start-Deathmatch.cmd: Deathmatch mit B-Waffenauswahl auf allen Pool-Maps.
+Die Startdateien verwenden denselben Port. Zum Wechsel den laufenden Server
+normal beenden und anschliessend die gewuenschte Startdatei oeffnen.
+
+PRO MAP DEN MODUS FESTLEGEN (server.cfg / gungame.cfg / deathmatch.cfg)
+map_variants = ca_spiderweb:gungame,ca_basin:weapon_dm,ca_blood_crash:ctf
+Die Eintraege anderer Pool-Maps beibehalten. Jede Map genau einmal eintragen.
+
+GUN GAME
+Eigenstaendige servergesteuerte Waffenleiter. Native gegnerische Kills bringen
+den Spieler weiter; Todesfaelle behalten die erreichte Stufe. Der Kill auf der
+letzten Stufe beendet die Runde mit diesem Spieler als Sieger. Danach greift
+das vorhandene Lobby-/Voting-Verfahren mit 60 Sekunden.
+
+gungame_weapons = sniper,beam,dmr,br,assault,shotgun,magnum,plasma,sword
+gungame_kills_per_weapon = 1
+map_gungame_weapons = ca_spiderweb:sniper,dmr,br,magnum,sword;ca_blood_crash:sniper,br,assault,magnum,sword
+
+Die erste Waffe steht links. Komma trennt Waffen, Semikolon trennt Maps.
+Ohne eigene Map-Reihenfolge gilt gungame_weapons. Waffen duerfen mehrfach
+in einer Leiter stehen. Pro Leiter werden derzeit maximal 20 Kills unterstuetzt
+(Anzahl Stufen mal gungame_kills_per_weapon).
+Escalation Slayer bleibt separat unter game_variant = escalation verfuegbar.
+
+DEATHMATCH MIT FREIER WAFFENWAHL
+game_variant = weapon_dm
+F3 aktiviert Zufallswaffen ab dem NAECHSTEN Respawn. Die aktuell getragenen
+Waffen bleiben bis dahin unveraendert. Danach gibt der Server bei jedem
+Respawn eine neue zufaellige Haupt- und Zweitwaffe aus der Waffenliste der Map.
+Mehrfaches F3 wuerfelt im laufenden Leben nicht erneut. Hauptwaffen stammen
+hier aus allen freigegebenen Klassen ausser Pistolen; Zweitwaffen aus Pistolen
+(magnum, plasma, boltshot, needler, sticky). Ist eine der Gruppen leer,
+lehnt der Server den Zufallsmodus mit einer Meldung ab.
+Eine feste Auswahl ueber B beendet den Zufallsmodus wieder, auch wenn man
+dieselbe Hauptwaffe auswaehlt. Eine neue Map setzt den Zufallsmodus zurueck.
+
+B oeffnet und schliesst das Menue. Alle fuenf Waffenklassen stehen nebeneinander.
+1 bis 5 waehlt die Klasse; links/rechts wechselt die Spalte, hoch/runter die
+Waffe. Enter oder Mausklick waehlt sie fuer das ganze Match. Nach Bestaetigung
+durch den Server schliesst sich das Menue automatisch. Esc schliesst ohne Auswahl.
+Das Match laeuft weiter. Der Server prueft jede Auswahl. Die gewaehlte Waffe
+wird nach jedem Respawn automatisch wieder ausgeruestet. Einmal pro Match
+waehlen reicht; erneutes Oeffnen mit B zeigt die gespeicherte Auswahl und
+erlaubt einen Wechsel. Bei einer neuen Map beginnt eine neue Match-Auswahl.
+
+deathmatch_weapons = sniper,beam,dmr,br,assault,shotgun,magnum,needler,sword
+map_deathmatch_weapons = z11_valhalla:sniper,br,assault,magnum;ca_basin:dmr,br,assault,shotgun,magnum,needler
+
+Ohne deathmatch_weapons sind alle 26 Katalogwaffen im Menue verfuegbar.
+Ohne eigene Map-Liste gilt deathmatch_weapons. Die Map-Liste ersetzt die
+allgemeine Liste fuer diese Map. Im Gun Game ist die freie B-Auswahl gesperrt.
+Beide neuen Modi benoetigen den nativen Dedicated Server.
+
+WAFFENSCHLUESSEL
+Praezision: sniper, beam, binary
+Gewehre: dmr, br, carbine, light_rifle, assault, storm, suppressor, saw
+Pistolen: magnum, plasma, boltshot, needler, sticky
+Nahkampf: shotgun, scattershot, sword, hammer
+Schwere Waffen: rocket, railgun, laser, fuel_rod, incineration, concussion
+
+Nur die Schluessel verwenden, keine Tag-Pfade oder Script-Befehle.
+Hugegrass ist weiterhin aus den Server-Pools ausgeschlossen.

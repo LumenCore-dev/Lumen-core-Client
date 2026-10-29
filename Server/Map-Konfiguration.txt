@@ -1,0 +1,52 @@
+MAP-KONFIGURATION
+
+Start-Server.cmd startet den gemischten Pool aus Server/server.cfg.
+Die beiden anderen Startdateien verwenden denselben Pool mit nur einem Modus:
+Start-GunGame.cmd und Start-Deathmatch.cmd. Nur eine Instanz pro Port starten.
+
+GEMISCHTER POOL
+Exile       ca_blood_crash   CTF
+Ragnarok    z11_valhalla     CTF
+Longbow     ca_gore_valley   Gun Game
+Meltdown    ca_canyon       CTF
+Outcast     ca_basin        Waffen-Deathmatch
+Perdition   ca_highrise     Slayer
+Shatter     dlc_dejewel     Slayer
+Vortex      ca_redoubt      CTF
+Wreckage    dlc_dejunkyard  Waffen-Deathmatch
+Daybreak    ca_spiderweb    Gun Game
+
+Die zehn bisherigen grossen Fahrzeugmaps bleiben im Pool. Hugegrass bleibt
+entfernt. Das Voting mischt die Angebote und zeigt Map und Modus; nach der
+Runde gehen alle fuer 60 Sekunden in die Lobby zurueck. Rundenlimit: 10 Minuten.
+
+WAFFENPROFILE
+Alle zehn Maps haben in jedem nativen Preset eigene Waffenprofile. Deshalb
+sind sie auch bei einem spaeteren Wechsel des Map-Modus bereits vorbereitet.
+Gun Game: zehn Stufen, Sniper zuerst, Schwert zuletzt, ein Kill pro Stufe.
+Die Zwischenstufen unterscheiden sich je Map. Longbow/Ragnarok betonen
+Praezisionswaffen, Outcast/Wreckage enthalten mehr kurze Waffen.
+Deathmatch: pro Map eigene Freigaben fuer B und F3. Jede Freigabe enthaelt
+Haupt- und Zweitwaffen. Die Zufallsauswahl beim Respawn verwendet dieselben
+Freigaben; Raketenwerfer und die Kategorie Schwere Waffen sind aus diesen
+Deathmatch-Listen entfernt. Die Fahrzeugeinstellungen der Engine wurden
+hierdurch nicht veraendert.
+Schluessel und Bedienung: Waffen-Modi.txt.
+
+SLOTS
+max_players = 1..16 wird vom nativen Dedicated-Build unterstuetzt.
+Die drei Presets sind auf 16 gesetzt. Der Server verbraucht keinen Spieler-Slot:
+16 Spieler plus ein Dedicated-Server ergeben 17 native Peer-Eintraege.
+Client UND Server gemeinsam aktualisieren.
+Die vorherige kuenstliche Zweiergrenze wurde entfernt; der Client akzeptiert
+jetzt auch den 17. Peer im Spielplan eines Dedicated-Servers.
+Drei echte Clients wurden gemeinsam im nativen Spiel geprueft. Ein Lasttest
+mit 16 gleichzeitig spielenden Clients ist damit noch nicht nachgewiesen.
+40/128 Spieler sind weiterhin nicht freigegeben: Die native Engine enthaelt
+feste Peer-, Start- und Replikationsstrukturen, die gemeinsam wachsen muessen.
+Ein groesserer Config-Wert oder eine groessere TCP-Lobby ersetzt das nicht.
+
+AENDERUNGEN AKTIVIEREN
+Den Server normal beenden und mit der gewuenschten Startdatei neu starten.
+Die Konfiguration wird beim Start gelesen. Ports und Passwoerter bleiben wie
+bisher. Nach jeder Aenderung jede Map nur einmal in map_variants eintragen.

@@ -1,0 +1,50 @@
+Halo 4 Dedicated Server mit lokaler Konsole und Source RCON
+
+Start: Start-Server.cmd doppelklicken.
+Im Serverfenster hinter > einen Befehl eingeben und Enter druecken.
+help zeigt die Syntax. stop beendet den Server.
+
+Spieladresse: 127.0.0.1:50680
+RCON-Adresse: 127.0.0.1:50682 (TCP, Source-RCON-Protokoll)
+RCON-Passwort: data/rcon-password.txt, automatisch beim ersten Start erzeugt.
+Die Serverkonsole nennt Adresse und Passwortdatei; sie zeigt das Passwort nicht.
+
+Befehle:
+  help
+  status
+  players
+  kick 1 Admin kick
+  ban 1 3600 Admin ban
+  ban <Profil-ID> 0 Admin ban
+  banlist
+  unban <Profil-ID>
+  mute 1 all 600
+  unmute 1 all
+  engine HS: (<nativer Halo-Scriptbefehl>)
+  stop
+
+Spieler-IDs stammen aus players. Dauer 0 bedeutet dauerhaft.
+Engine-Scripte werden erst bei geladenem, bestaetigtem Spiel angenommen.
+Die native Engine verarbeitet sie ueber ihre bestehende Befehlsschnittstelle.
+RCON bestaetigt die Queue; native Antworten erscheinen im Serverfenster.
+next meldet in diesem nativen Build embedded-map-restart-unavailable.
+
+RCON-Konsole.cmd oeffnet eine separate RCON-Shell (Python 3 erforderlich).
+Einzelner Befehl:
+  python rcon_client.py --port 50682 --password-file data/rcon-password.txt status
+Von einem anderen LAN-Rechner: --host <Server-LAN-IP> verwenden.
+In server.cfg bind und rcon_bind auf eine erreichbare Server-LAN-IP setzen.
+RCON uebertraegt Klartext; fuer Fernzugriff ueber das Internet einen VPN nutzen.
+console = false schaltet nur das Eingabefenster aus. rcon_bind = off deaktiviert RCON.
+Passwort aendern: Server stoppen, Passwortdatei editieren, Server starten.
+16 bis 256 UTF-8-Bytes ohne Steuerzeichen; das erzeugte Passwort hat 64 Hexzeichen.
+
+Logs: data/engine/server-console.log und data/engine/server-core.log.
+Der dynamische Speicherpool und der Modus ohne D3D-Geraet bleiben aktiviert.
+Es werden die vorhandenen Assets aus ../Halo4-Windows-Dedicated/game benutzt.
+Der aktuelle native Spielbetrieb ist mit einem echten Client auf wraparound/Slayer getestet.
+Bots sind aus. Weitere Spieler, andere Karten, Linux und Langzeitbetrieb sind offen.
+
+Build: ../../build-rcon-server.cmd
+Quellen: native/dedicated_client.cpp, native/server_console.hpp,
+         server/src/control.rs, server/src/rcon.rs.

@@ -1,0 +1,70 @@
+HALO 4 - ARBEITSORDNER AUF D:
+Stand: 15.10.2026
+
+ORDNER
+Source\  Aktuelle C++-/Rust-Quellen, Tests, Assets, Konfigurationen,
+         Abhaengigkeiten und lokale Rust-/Python-Werkzeuge.
+Client\  Aus Source neu gebauter Client mit Assets und Lobbyserver
+         fuer die Funktion 'Lobby erstellen'.
+Server\  Aus Source neu gebauter nativer Dedicated Server und Lobbyserver,
+         Konfigurationen und uebernommene Serverdaten.
+Server\Packages\  Vorhandene Serverpakete, Workshop-Werkzeuge und Spieldaten.
+         Diese Pakete enthalten auch aeltere Programme. Die aktuellen,
+         neu gebauten Programme stehen direkt in Client\ und Server\.
+
+STARTEN
+Hugegrass-Test-starten.cmd startet den geprueften Hugegrass-Stand mit
+  123 Fahrzeugen und Scarab. Spieler, Waffe, Bewegung und Netzwerk sind geprueft.
+Hugegrass-SDK-Test-starten.cmd startet den zugehoerigen Editor-Teststand.
+
+Client-Starten.cmd startet den aktuellen Client.
+Server-Starten.cmd startet den nativen Dedicated Server mit Server\server.cfg.
+  Voreinstellung: grosse Fahrzeugmaps, Start auf Exile, LAN,
+  127.0.0.1:49180, RCON 127.0.0.1:49182, max_players=16 (drei echte Clients gemeinsam geprueft).
+  Nach jeder Map zur Lobby; Abstimmung 60 Sekunden, Rundenzeit 10 Minuten, eigener Modus pro Map.
+  Map-Liste und Hinweise: Server\Map-Pool.txt. Fuer weitere PCs muss die
+  Bind-Adresse/Spielerzahl bewusst in Server\server.cfg geaendert werden.
+Lobbys-Starten.cmd startet Master, Multiplayer- und Koop-Lobby aus
+  Server\dedicated.cfg. Dieser Lobbydienst ist ein eigener Betriebsmodus;
+  er ist kein Nachweis fuer einen spielbaren nativen Dedicated Server.
+  Das Konsolenfenster offen lassen; Ctrl+C beendet die Servergruppe.
+
+QUELLEN UND BAUEN
+Client: Source\native\native_client.cpp und zugehoerige Header.
+Nativer Server: Source\native\native_server.cpp / dedicated_client.cpp.
+Lobby, Master, Datenbank: Source\server\src\.
+TLS: Source\secure-channel\src\.
+Weitere Werkzeuge: Source\tools\ und Source\mcp\.
+Neu-Bauen.cmd baut Client, nativen Server und Lobbyserver offline neu.
+  Voraussetzung: die auf diesem PC vorhandene Visual-Studio-2022-
+  C++-Installation. Die lokale Rust-Werkzeugkette liegt in Source\build\rust-runtime.
+  Source\Build-Aktuell.cmd ist der gemeinsame Build-Einstieg.
+  Source\Publish-Aktuell.ps1 uebernimmt erfolgreiche Builds nach Client/Server.
+  Laufende aktuelle Programme vor dem Uebernehmen schliessen.
+  Client-/Server-Einstellungen werden dabei nicht ueberschrieben.
+  Build-Manifest.json enthaelt SHA256-Pruefsummen der aktuellen Programme.
+
+ABHAENGIGKEITEN
+Der Client verwendet weiterhin die installierten MCC-/Halo-4-Spieldaten
+auf E:\SteamLibrary\steamapps\common\Halo The Master Chief Collection.
+Der native Server verwendet die kopierten Spieldaten innerhalb von Server\Packages.
+Source\dist ist eine Verzeichnisverknuepfung auf Server\Packages innerhalb
+dieses Arbeitsordners. Dadurch bleiben vorhandene Paket-Skripte verwendbar,
+ohne die grossen Spieldateien doppelt abzulegen.
+Die MinHook-Abhaengigkeit liegt jetzt vollstaendig in Source\third_party\minhook.
+Die MCP-Python-Umgebung wurde am neuen Ort eingerichtet. Die aktive Codex-
+MCP-Verbindung wurde nicht umgestellt. Source\Install-MCP.ps1 kann sie
+spaeter auf diesen Arbeitsordner registrieren.
+
+PRUEFSTAND
+Client, nativer Server und Lobbyserver wurden hier aus Source neu gebaut.
+Die Konfiguration fuer zwei Lobbys plus Master wurde erfolgreich validiert.
+Python-/MCP-Importe am neuen Ort wurden geprueft.
+Es wurde kein Spiel und kein Server automatisch gestartet. Ein Gameplay-
+oder Netzwerk-Funktionstest vom neuen Ort ist damit noch nicht nachgewiesen.
+Funktionale Grenzen des Projekts stehen in Source\README.md,
+Source\MULTIPLAYER.md und Source\WINDOWS-DEDICATED.md.
+
+Nicht uebernommen wurden Linux-Test-VM, alte Build-/Rollback-Testordner
+und alte Compiler-Zwischendateien. Beim Neubau entstehen neue Build-Dateien.
+Der urspruengliche Arbeitsordner auf C: wurde bei diesem Umzug nicht geloescht.

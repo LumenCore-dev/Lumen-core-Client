@@ -1,0 +1,33 @@
+GROSSE FAHRZEUGMAPS
+
+Exile: Capture the Flag (ca_blood_crash)
+Ragnarok: Capture the Flag (z11_valhalla)
+Longbow: Team Slayer (ca_gore_valley)
+Meltdown: Capture the Flag (ca_canyon)
+Outcast: Team Slayer (ca_basin)
+Perdition: Team Slayer (ca_highrise)
+Shatter: Team Slayer (dlc_dejewel)
+Vortex: Capture the Flag (ca_redoubt)
+Wreckage: Team Slayer (dlc_dejunkyard)
+Daybreak: Capture the Flag (ca_spiderweb)
+
+Server/server.cfg: map_pool und map_variants (map:modus, durch Kommas getrennt).
+Server/dedicated.cfg: dieselben Eintraege fuer die Multiplayer-Lobby.
+Nach jeder Map zur gemeinsamen Lobby. Abstimmung: 60 Sekunden, Kartenwechsel nach 600 Sekunden Spielzeit.
+Multiplayer: zufaellige Vorschlaege ohne die gerade gespielte Map.
+Andere Vorschlaege werden neu gemischt; Modi bleiben der jeweiligen Map zugeordnet.
+Jede Stimme gilt fuer die angezeigte Kombination aus Karte und Modus.
+Lobby-Host: MODE fuer die aktuell ausgewaehlte Karte aendern; gilt fuer weitere Abstimmungen bis zum Neustart.
+Native Spielergrenze bleibt bei 2. Einstellungen werden beim naechsten Start geladen.
+
+PRUEFSTAND
+Config, Vote-Protokoll und Moduszuordnung getestet; Programme neu gebaut.
+Native Kartenwechsel repariert: 60 Sekunden Voting, danach Ragnarok/CTF
+auf Server und Client geladen. Zusaetzlicher Test mit gueltiger Spielerfigur
+auf der naechsten Map bestanden; dieselben Prozesse und Fenster erhalten.
+Details: Source/reports/rotation-lifetime-fix-summary.json
+Pruefbericht: Source/reports/vehicle-pool-validation.json
+
+VOTING-UEBERGANG
+Letzte 3 Sekunden: 3-2-1 mit kurzen Toenen (Effektlautstaerke/Stummschaltung).
+Nach Serverbestaetigung: Gewinner-Map zoomt in 700 ms in das Ladebild.

@@ -1,0 +1,58 @@
+﻿[
+    {
+        "File":  "Client\\LumenCore.exe",
+        "SHA256":  "0EABB4FCFCDF39EEBF7B321B441F9F4907CD5860363093CEFC15BC028EA45CA2"
+    },
+    {
+        "File":  "Client\\LumenCoreRuntime.dll",
+        "SHA256":  "5ACDA8CBC819B4A583342B95E3ABBC4F4D6CA9F7941B22B1362C2899190284A2"
+    },
+    {
+        "File":  "Source\\LumenCore.exe",
+        "SHA256":  "0EABB4FCFCDF39EEBF7B321B441F9F4907CD5860363093CEFC15BC028EA45CA2"
+    },
+    {
+        "File":  "Source\\LumenCoreRuntime.dll",
+        "SHA256":  "5ACDA8CBC819B4A583342B95E3ABBC4F4D6CA9F7941B22B1362C2899190284A2"
+    },
+    {
+        "File":  "Client\\Halo4NativeClient.exe",
+        "SHA256":  "37DD62910BD34045C455A1E97591111248020616D82BE825BB7C331175B52FE2"
+    },
+    {
+        "File":  "Server\\Halo4DedicatedServer.exe",
+        "SHA256":  "54BDC424B76E79A24D6386418E1595D63D7C28DF48001EDEA0BF0407741E5061"
+    },
+    {
+        "File":  "Server\\Halo4LobbyServer.exe",
+        "SHA256":  "115DEFF9AF745F616361055A87BE4D5226CB64F45ED9210CDBFA4E7253D09923"
+    },
+    {
+        "File":  "Client\\Halo4LobbyServer.exe",
+        "SHA256":  "115DEFF9AF745F616361055A87BE4D5226CB64F45ED9210CDBFA4E7253D09923"
+    },
+    {
+        "File":  "Source\\Halo4NativeClient.exe",
+        "SHA256":  "37DD62910BD34045C455A1E97591111248020616D82BE825BB7C331175B52FE2"
+    },
+    {
+        "File":  "Source\\Halo4DedicatedServer.exe",
+        "SHA256":  "54BDC424B76E79A24D6386418E1595D63D7C28DF48001EDEA0BF0407741E5061"
+    },
+    {
+        "File":  "Source\\Halo4LobbyServer.exe",
+        "SHA256":  "115DEFF9AF745F616361055A87BE4D5226CB64F45ED9210CDBFA4E7253D09923"
+    },
+    {
+        "File":  "Source\\Halo4DedicatedServer-online.exe",
+        "SHA256":  "115DEFF9AF745F616361055A87BE4D5226CB64F45ED9210CDBFA4E7253D09923"
+    },
+    {
+        "File":  "Linux-Upload\\Halo4DedicatedServer.exe",
+        "SHA256":  "54BDC424B76E79A24D6386418E1595D63D7C28DF48001EDEA0BF0407741E5061"
+    },
+    {
+        "File":  "Linux-Upload\\Halo4LobbyServer.exe",
+        "SHA256":  "115DEFF9AF745F616361055A87BE4D5226CB64F45ED9210CDBFA4E7253D09923"
+    }
+]

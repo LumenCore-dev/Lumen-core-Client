@@ -1,0 +1,17 @@
+@echo off
+setlocal
+cd /d "%~dp0"
+if exist "%~dp0wide-session.enabled" (
+    set "HALO4_CAPACITY_LAB_PLAYERS=128"
+    set "HALO4_WIDE_SESSION_BANK=1"
+)
+set "HALO4_HEADLESS_CPU_GRAPHICS_PROBE=1"
+set "HALO4_HEADLESS_NO_D3D_PROBE=1"
+set "HALO4_HEADLESS_DYNAMIC_ARENA=1"
+set "HALO4_HEADLESS_ARENA_MIB="
+set "HALO4_DEDICATED_REPLICATION_PROBE="
+set "HALO4_DEDICATED_MATCH_DEATH_PROBE="
+set "HALO4_SERVER_CONSOLE_TEST="
+set "HALO4_SERVER_CONSOLE_TEST_STOP="
+set "HALO4_SERVER_CONSOLE_TEST_VISIBLE="
+start "" "%~dp0Halo4DedicatedServer.exe" --config "%~dp0gungame.cfg"

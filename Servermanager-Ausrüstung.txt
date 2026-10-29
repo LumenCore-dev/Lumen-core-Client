@@ -1,0 +1,93 @@
+HALO 4 SERVERMANAGER
+
+Start: Halo4-Servermanager.exe oder Servermanager-Starten.cmd.
+
+EDITOREN: NUR COPY & PASTE
+Config-, Karten-, Waffen- und Skripteditoren bearbeiten ausschliesslich Text.
+Diese Editoren speichern keine Config-/Skriptdateien und laden nichts hoch.
+Der neue Ausruestungseditor kann ausdruecklich ein lokales ZIP-Paket exportieren.
+
+- Datei als Vorlage: lokale .cfg-Datei in den Textentwurf einlesen.
+  Das aendert weder die Datei noch die aktive Serverkonfiguration.
+- Importierte Vorlage: bereits vorhandene lokale Serverkopie laden.
+  Dieser Knopf baut keine SSH-/WinSCP-Verbindung auf.
+- Neuer Entwurf: aktuellen Text unter einem neuen Entwurfsnamen bearbeiten.
+  Es wird keine Datei erstellt.
+- Config einfuegen: vollstaendige Konfiguration aus der Zwischenablage laden.
+- Allgemein: Name, Adressen, Spielerzahl, Rundenzeit usw. fuer den Entwurf.
+- Karten & Modi: Kartenpool, Startkarte und Spielmodus je Karte festlegen.
+- Waffen: Gun-Game-Reihenfolge und Deathmatch-Freigabelisten zusammenstellen.
+  Erste Waffe = Startwaffe bzw. erste Deathmatch-Auswahl.
+  Unterstuetzt werden globale Listen und Ausnahmen fuer einzelne Karten.
+- Config-Text: vollstaendigen Entwurf bearbeiten und pruefen.
+- Config kopieren (auch Ctrl+S): Text in die Zwischenablage kopieren.
+  Danach selbst in die gewuenschte Datei einfuegen.
+- Mods & Skripte: Vorlage laden, neu schreiben, einfuegen und kopieren.
+  Der Skripteditor hat keine Ausfuehren-Aktion.
+- Eigene Startwaffen fuer CTF/Slayer, Flaggenanzahl und Siegpunktzahl haben
+  im aktuellen Server keine eigenen Config-Felder. Die Spielvariante legt sie fest.
+
+Die Texte bleiben beim Bearbeiten im Arbeitsspeicher. Vor dem Schliessen kopieren.
+Editor-Entwuerfe sind unabhaengig von RCON, Zeitplaenen und Serversteuerung.
+
+DIREKTES RCON
+VPS: 5.199.139.145, TCP-Port 49182.
+Die App spricht direkt mit dem nativen RCON-Endpunkt. Kein SSH-Tunnel und
+kein WinSCP-/Python-Aufruf auf dem VPS fuer RCON-Befehle oder Status.
+Anmeldung: RCON-Passwort, TLS 1.3 mit geprueftem Serverzertifikat.
+Vorhandenes Passwort lokal mit Windows DPAPI geschuetzt unter
+%LOCALAPPDATA%/Halo4Servermanager/connections/5.199.139.145.
+Im RCON-Bereich koennen einzelne Befehle bewusst gesendet werden.
+Eine andere Verbindung wird mit IP, Port, Passwort und Zertifikat eingegeben.
+
+SERVERSTEUERUNG UND LOGS
+Stoppen sendet den RCON-Befehl stop.
+Start und Prozessneustart verwenden separat den Linux-Dienst ueber SSH.
+Der aktuelle Halo-Server implementiert keinen eigenen RCON-Befehl restart.
+Fuer diese Dienstaktionen und das Lesen der VPS-Logdateien wird weiterhin
+WinSCP mit der gespeicherten Sitzung root@bitymedia.ch verwendet.
+Die Texte aus den Editoren werden dabei nicht angewendet.
+
+ZEITPLAENE
+Start/Stop/Neustart fuer den aktiven Server nach Europe/Zurich.
+Die App muss offen sein. Verpasste Termine werden nicht nachgeholt.
+Termine werden hoechstens einmal je Kalendertag ausgefuehrt.
+Zeitplaene werden lokal gespeichert; Editorentwuerfe spielen dabei keine Rolle.
+App schliessen beendet die Zeitplaene, nicht den Spielserver.
+
+BUILD
+powershell -ExecutionPolicy Bypass -File Source/desktop/Build-App.ps1
+Build-Abhaengigkeiten liegen in Source/desktop/.venv.
+Die fertige EXE braucht keine separate Python-Installation.
+
+AUSRUESTUNG PRO MAP UND SPIELTYP
+1. Unter Karten & Modi die gewuenschten Maps zum Pool hinzufuegen.
+2. Ausruestung oeffnen, Map und Spieltyp waehlen und Auswahl laden.
+3. Bis zu fuenf Plaetze aktivieren. Haupt-/Nebenwaffe, Granaten, Faehigkeit,
+   Taktikpaket und Unterstuetzung einstellen. Startplatz muss aktiv sein.
+4. Liste uebernehmen; weitere Map-/Spieltyp-Kombinationen hinzufuegen.
+5. Config-Paket speichern exportiert eine ZIP-Datei. Darin liegen z. B.:
+     server.cfg
+     maps/wraparound/slayer.cfg
+     maps/wraparound/ctf.cfg
+     maps/z11_valhalla/ctf.cfg
+   Das Paket im gewuenschten Serverordner entpacken. Bei vorhandener server.cfg
+   zuerst die Werte vergleichen/uebernehmen. Andere Kartenlisten werden durch
+   ein Paket mit weniger Listen nicht geloescht.
+6. Die server.cfg enthaelt loadouts_directory = maps. Der aktualisierte native
+   Dedicated Server liest maps/<Map>/<Spieltyp>.cfg bei jedem Kartenstart.
+   Windows und derselbe native Server unter Wine verwenden dasselbe Format.
+   Ein laufender Server muss fuer die neue Programmversion neu gestartet werden.
+
+Startplatz: steht zuerst in der angebotenen Liste; eine spaetere Spielerwahl
+bleibt moeglich. Nicht aktive Plaetze werden nicht angeboten. "Spieltyp-Standard"
+uebernimmt den jeweiligen Ausruestungswert aus den Spielregeln.
+Keine passende Datei: Originalausruestung bleibt erhalten. Spieltypen ohne
+Ausruestungsmenue werden nicht veraendert. Gun Game und Waffen-Deathmatch haben
+separate Regeln unter Waffen; Escalation bietet dieses Menue nicht an.
+Fehlerhafte aktive Dateien werden mit Fehlermeldung abgelehnt.
+
+Ausruestungsdatei laden liest eine einzelne vorhandene Map-/Spieltyp-Datei.
+Config kopieren kopiert nur die aktuelle Ausruestungsdatei. Listen entfernen
+entfernt nur einen Entwurf aus dem Paket, keine Datei auf dem Server.
+Es gibt keinen automatischen Upload und keinen automatischen Serverneustart.

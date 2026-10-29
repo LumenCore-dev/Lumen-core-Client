@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "patch_id": "halo4-native-capacity-300-lab1",
+  "engine_sha256": "7c53e7d5bc9848545a1b70e2768242479336fba1b7630d7ab955f7fd0c34fa84",
+  "requested_capacity": 300,
+  "production_released": false,
+  "native_300_player_gameplay_verified": false,
+  "status": "allocation_verified_membership_incomplete",
+  "supported_lab_operation": {
+    "kind": "redirect_player_allocation_call_before_start",
+    "call_rva": "0x7cc03",
+    "original_bytes": "e8d066fcff",
+    "allocator_rva": "0x432d8",
+    "replacement_capacity": 300,
+    "runtime_trampoline": "mov edx,300; jmp original_allocator",
+    "private_image_required": true,
+    "rollback_original_bytes_verified": true
+  },
+  "remaining_contracts": [
+    {
+      "component": "native_peer_membership",
+      "evidence_rva": "0x4ed2c4",
+      "current_limit": 17,
+      "mask_bits": 64,
+      "required_work": "Expand peer records, bitmaps and every reader/writer together."
+    },
+    {
+      "component": "membership_update_codec",
+      "registration_rva": "0x58b21b",
+      "encode_rva": "0x5892dc",
+      "decode_rva": "0x589c18",
+      "registered_structure_bytes": 12232,
+      "evidence_rva": "0x58949e",
+      "observed_index_field_bits": 5,
+      "required_work": "Map all fields; expand native structures and symmetric encoding, decoding and validation."
+    },
+    {
+      "component": "player_globals_and_simulation",
+      "initialization_rva": "0x7cbb4",
+      "required_work": "Expand per-map globals, player mapping, simulation loops and native client adapters."
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+# Uses the existing local Halo 4 game assets beside this server folder.
+game_directory = Packages/Halo4-Windows-Dedicated/game
+bind = 127.0.0.1:50680
+name = Halo 4 Dedicated RCON
+network = lan
+password =
+database = data/server.sqlite3
+mode = multiplayer
+map = wraparound
+map_pool = wraparound
+game_variant = slayer
+difficulty = 1
+bots = 0
+max_players = 1
+min_players = 1
+round_seconds = 0
+map_change = rotation
+workshop_download = false
+headless = true
+console = true
+# Source RCON. To allow another LAN computer, select this server's LAN IPv4.
+# The game bind must also use a reachable LAN IPv4 for remote game clients.
+rcon_bind = 127.0.0.1:50682
+# Generated once on first start. Edit while the server is stopped, then restart.
+rcon_password_file = data/rcon-password.txt

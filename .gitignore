@@ -1,0 +1,47 @@
+# Grosse Spiel-Assets (zu gross fuer GitHub)
+Source/
+Linux-Upload/
+
+# Spiel-Assets in Client & Server
+Client/assets/
+Client/custom-maps/
+Client/Hugegrass-Test-V67/
+Client/Hugegrass-Test-V71/
+Client/Hugegrass-Test-V73/
+Client/reports/
+Client/data/
+Server/assets/
+Server/custom-maps/
+Server/Packages/
+Server/data/
+
+# Build-Reports
+reports/
+
+# Karten- und Sound-Dateien
+*.map
+*.pck
+*.vhdx
+
+# Runtime-Daten
+*.film
+*.sqlite3
+*.sqlite3-wal
+*.sqlite3-shm
+*.dmp
+*.pdb
+
+# Python-Cache
+__pycache__/
+*.pyc
+
+# Sensible Runtime-Daten
+data/admin-token.txt
+data/rcon-password.txt
+data/server.der
+*.der
+fingerprint.txt
+
+# Temp-Dateien
+*.tmp
+*.log

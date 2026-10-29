@@ -1,0 +1,41 @@
+HALO 4 - DEBIAN-BEFEHLE
+
+Diese Befehle in einer SSH-Konsole auf dem Debian-VPS als root ausfuehren.
+
+Beide Dienste starten:
+systemctl start halo4-master halo4-dedicated
+
+Beide Dienste beenden:
+systemctl stop halo4-dedicated halo4-master
+
+Beide Dienste neu starten:
+systemctl restart halo4-master halo4-dedicated
+
+Zustand anzeigen (mit q verlassen):
+systemctl status halo4-master halo4-dedicated --no-pager
+
+Automatisch beim VPS-Start starten, und jetzt starten:
+systemctl enable --now halo4-master halo4-dedicated
+
+Autostart ausschalten (laufende Dienste laufen weiter):
+systemctl disable halo4-master halo4-dedicated
+
+Spielserver-Protokoll verfolgen (Strg+C beendet nur die Anzeige):
+journalctl -u halo4-dedicated -f
+
+Masterserver-Protokoll verfolgen:
+journalctl -u halo4-master -f
+
+Spielserver-Konfiguration:
+/opt/halo4/server.cfg
+Nach Aenderungen: systemctl restart halo4-dedicated
+
+Stand: Beide Dienste installiert; Autostart ist noch ausgeschaltet.
+Der Masterserver ist auf 5.199.139.145:49175 erreichbar.
+Der Spielserver laeuft im Online-Modus auf 5.199.139.145:49180.
+Native Engine: UDP 49181; RCON bleibt lokal auf 127.0.0.1:49182.
+Die benoetigten Ports werden durch halo4-network.service beim Start gesetzt.
+Der oeffentliche Clientbeitritt mit Kartenstart, Bewegung, Blick und Schuss
+wurde am 16.10.2026 von diesem Windows-PC aus erfolgreich getestet.
+Master, Favorit und Serverzertifikat sind im passenden Projekt-Client gesetzt.
+Auf Windows startet VPS-Verbinden.cmd die direkte Verbindung.

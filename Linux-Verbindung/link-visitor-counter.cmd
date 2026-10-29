@@ -1,0 +1,6 @@
+@echo off
+setlocal
+call "C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\Build\vcvars64.bat" >nul
+if errorlevel 1 exit /b 1
+python D:\Halo4-Server\Source\analysis\link_visitor_server.py
+exit /b %errorlevel%

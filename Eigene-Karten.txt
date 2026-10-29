@@ -1,0 +1,26 @@
+Eigene Karten lokal und auf dem Server
+
+Hugegrass ist bereits importiert.
+
+Lokal:
+Client starten > LOCAL MAPS > Karte waehlen > Modus waehlen > LOKAL STARTEN.
+
+Server:
+Im Servermanager unter Karten & Spielmodi Hugegrass auswaehlen, Karte
+hinzufuegen und bei Bedarf als Startkarte setzen. Konfiguration uebernehmen.
+
+Weitere eigene Karten:
+Im Servermanager auf Eigene Karte importieren klicken oder
+Eigene-Karte-Importieren.cmd starten. Eine kompilierte Halo-4-.map-Datei
+waehlen. Dazu gehoeren die gleichnamige .mapinfo oder die MCC-JSON-Metadaten
+mit MapGuid und ScenarioFile. Falls diese nicht daneben liegen, fragt der
+Import nach der Datei.
+
+Nach dem Import Client und Server neu starten. Im Servermanager die Karte
+mit Karte hinzufuegen in den Kartenpool aufnehmen. Ein erneuter Programm-
+Build ist nicht erforderlich.
+
+Der Import speichert Karten und Metadaten im Ordner custom-maps neben dem
+Programm. Auf anderen Rechnern den gesamten Ordner custom-maps auf Server
+und alle mitspielenden Clients kopieren. Derselbe Katalog muss auf allen
+Rechnern verwendet werden, damit die Karten-IDs uebereinstimmen.

@@ -1,0 +1,20 @@
+Lumen Core standalone preview preparation tool
+
+CustomizeExport and PreviewPack use Reclaimer by Gravemind2401 and contributors.
+The separate tool and included Reclaimer libraries are distributed under
+GPL-3.0-or-later. See licenses/Reclaimer-GPL-3.0.txt. Corresponding source,
+including the locally modified Reclaimer projects, is supplied in
+LumenCore-0.2.8-preview-tool-source.zip on the same release page:
+https://github.com/LumenCore-dev/Lumen-core-Client/releases/tag/v0.2.8-preview
+
+The launcher invokes this separate executable with local map/tag/output paths.
+The native game client does not link the Reclaimer libraries.
+Upstream: https://github.com/Gravemind2401/Reclaimer
+
+Microsoft .NET runtime, Windows Desktop runtime and System.Drawing components
+are included with their license and third-party notices in licenses/.
+The Xbox xcompress DLLs are not included or required for this MCC workflow.
+
+The download includes no generated Halo geometry or textures. The tool reads
+the user's installed MCC files and writes local preview data. It never writes
+to the MCC installation. Generated data must not be uploaded with releases.
